@@ -1,0 +1,37 @@
+/* Animirano Meni */
+.rollingAnimated ul {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  margin: 0px;
+}
+.rollingAnimated ul li {
+  float:left;
+  list-style: outside none none;
+  margin: 0 25px 0 0;
+}
+
+.rollingAnimated a {
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 65px;
+  margin-top: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.1, 0.1, 0.5, 1.4) 0s;
+}
+
+.rollingAnimated a:hover {
+margin-top: -65px;
+}
+
+.rollingAnimated a:after {
+content: attr(data-text);
+display: block;
+color: #11decd;
+}

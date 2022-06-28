@@ -1,0 +1,148 @@
+/**  Keyframes za autoplay **/
+@-webkit-keyframes autoplay {
+  /* pozicija na prv slajd */
+  0% {
+    left: 0;
+  }
+  /** pozicija na vtori slajd **/
+  16% {
+    left: -40.625rem;
+  }
+  /** pozicija na treti slajd **/
+  32% {
+    left: -81.25rem;
+  }
+  /** pozicija na cetvrti slajd **/
+  48% {
+    left: -121.875rem;
+  }
+  /* pozicija na petti slajd */
+  64% {
+    left: -162.5rem;
+  }
+  /* pozicija na shesti slajd */
+  80% {
+    left: -203.125rem;
+  }
+  /** pozicija na sedmi slajd **/
+  100% {
+    left: -243.75rem;
+  }
+}
+@keyframes autoplay {
+  /** pozicija na prvi slajd **/
+  0% {
+    left: 0;
+  }
+  /** pozicija na vtori slajd **/
+  16% {
+    left: -40.625rem;
+  }
+  /** pozicija na treti slajd **/
+  32% {
+    left: -81.25rem;
+  }
+  /** pozicija na cetvrti slajd **/
+  48% {
+    left: -121.875rem;
+  }
+  /** pozicija na petti slajd **/
+  64% {
+    left: -162.5rem;
+  }
+  /** pozicija na shesti slajd **/
+  80% {
+    left: -203.125rem;
+  }
+  /** pozicija na sedmi slajd **/
+  100% {
+    left: -243.75rem;
+  }
+}
+
+/** Slajder **/
+
+.slider {
+  position: relative;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  width: 40.625rem;
+  height: 26.25rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.slider__list {
+  position: absolute;
+  left: 0;
+  width: 284.375rem;
+  margin:0;
+  padding:0;
+}
+.slider__slide {
+  float: left;
+}
+
+/** Kontrolno kopce za slajderot **/
+
+.slider__control {
+  margin-right: auto;
+  margin-left: auto;
+  width: 4.5rem;
+  font-family: Montserrat;
+}
+.slider__control label {
+  position: relative;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 4.5rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: transparent;
+  background: #d16ba5;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: left 0.15s ease-out;
+}
+.slider__control label:before {
+  content: "autoplay";
+  position: absolute;
+  top: 2.5rem;
+  left: -6px;
+  color: rgb(255, 255, 255);
+  font-size: .95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.slider__control label:after {
+  content: "";
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  background: #fff;
+  transition: left 0.15s ease-out;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.slider__switch:checked + .slider > .slider__list {
+  -webkit-animation-name: autoplay;
+          animation-name: autoplay;
+  /* Ova go menuva vremetranenjeto na slajdovite */
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.slider__switch:checked + .slider + .slider__control > label {
+  background: #12e2eb;
+}
+.slider__switch:checked + .slider + .slider__control > label:after {
+  left: 2.75rem;
+}

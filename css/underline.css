@@ -1,0 +1,41 @@
+.underlineEffects ul { 
+    margin: -15px auto; 
+    padding: 0; 
+    list-style: none; 
+    display: table;
+    text-align: center;
+}
+.underlineEffects li { 
+    display: table-cell; 
+    position: relative; 
+}
+.underlineEffects a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 0px 15px 0px 15px;
+    position: relative;
+}
+.underlineEffects a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.underlineEffects a:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+@media screen and (max-height: 300px) {
+    .underlineEffects ul {
+        margin-top: 40px;
+    }
+}
